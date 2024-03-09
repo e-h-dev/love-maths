@@ -14,8 +14,13 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 })
 
+/**
+ *The main game is built on these two numbers
+ * they will appear after the user loads the page
+ */
 function runGame(){
-
+    let num1 = Math.floor(Math.random() *25) +1;
+    let num2 = Math.floor(Math.random() *25) +1;
 }
 
 function checkAnswer(){
