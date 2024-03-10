@@ -39,8 +39,10 @@ function checkAnswer(){
 
     if (isCorrect){
         alert('Well Done you are amazung at maths your answer is correct');
+        incrementScore();
     } else {
         alert(`Wooooops....... you answered ${userAnswer} the corrrect answer is ${calculatedAnswer[0]}!`)
+        incrementWrongAnswer();
     }
 
     runGame(calculatedAnswer[1])
@@ -61,10 +63,13 @@ function calculateCorrectAnswer(){
 }
 
 function incrementScore(){
-
+    let oldScore = parseInt(document.getElementById('score').innerText);
+    document.getElementById('score').innerText = ++oldScore;
 }
 
 function incrementWrongAnswer(){
+    let oldScore = parseInt(document.getElementById('incorrect').innerText);
+    document.getElementById('incorrect').innerText = ++oldScore;
 
 }
 
