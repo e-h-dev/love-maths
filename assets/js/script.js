@@ -30,7 +30,7 @@ function runGame(gameType){
 
     document.getElementById("answer-box").value = "";
     document.getElementById("answer-box").focus();
-
+    
     let num1 = Math.floor(Math.random() *25) +1;
     let num2 = Math.floor(Math.random() *25) +1;
     let num3 = num1 * num2;
@@ -49,17 +49,28 @@ function runGame(gameType){
     }
 }
 
+function clearMessage(){
+    correctMessage.innerHTML = "";
+    incorrectMessage.innerHTML = "";
+}
+
 function checkAnswer(){
     let userAnswer = parseInt(document.getElementById('answer-box').value);
     let calculatedAnswer = calculateCorrectAnswer();
     let isCorrect = userAnswer === calculatedAnswer[0];
 
     if (isCorrect){
+        let correctMessage = document.getElementById("correct-answer-message");
+        //correctMessage.innerHTML = 'Well Done you are amazing at maths your answer is correct';
         alert('Well Done you are amazung at maths your answer is correct');
         incrementScore();
+        //clearMessage();
     } else {
+        let incorrectMessage = document.getElementById("incorrect-answer-message");
+        //incorrectMessage.innerHTML = `Wooooops....... you answered ${userAnswer} the corrrect answer is ${calculatedAnswer[0]}!`;
         alert(`Wooooops....... you answered ${userAnswer} the corrrect answer is ${calculatedAnswer[0]}!`)
         incrementWrongAnswer();
+        //clearMessage();
     }
 
     runGame(calculatedAnswer[1])
