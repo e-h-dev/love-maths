@@ -62,7 +62,7 @@ function checkAnswer(){
     if (isCorrect){
         let correctMessage = document.getElementById("correct-answer-message");
         //correctMessage.innerHTML = 'Well Done you are amazing at maths your answer is correct';
-        alert('Well Done you are amazung at maths your answer is correct');
+        alert('Well Done you are amazing at maths your answer is correct');
         incrementScore();
         //clearMessage();
     } else {
